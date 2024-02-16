@@ -7,13 +7,11 @@ import './continueWatching.css';
 import { db } from "../../config/firebase";
 import { AuthContext } from '../../context/Auth';
 import { collection, query, where, getDocs , deleteDoc } from 'firebase/firestore';
+import { Link } from 'react-router-dom';
 
 
 function ContinueWatching() {
-    const [data, setData] = useState([
-        // { name: 'The Batman' },
-        // { name: 'Moon Knight' },
-    ]);
+    const [data, setData] = useState([]);
     const { user } = useContext(AuthContext);
 
     const apiKey = 'c9055af6a221621e7482dc780d75a5be';
@@ -26,25 +24,31 @@ function ContinueWatching() {
             const querySnapshot = await getDocs(sql);
     
             const episodesData = querySnapshot.docs.map(doc => ({
+                id: doc.id,
                 serieId: doc.data().serieId,
                 seasonNumber: doc.data().seasonNumber,
                 episodeNumber: doc.data().episodeNumber
             }));
     
-            // Fetch details for each watched episode
+            console.log(episodesData); 
+    
+            
             const episodesDetailsPromises = episodesData.map(async episode => {
                 const { serieId, seasonNumber, episodeNumber } = episode;
                 const response = await axios.get(`https://api.themoviedb.org/3/tv/${serieId}/season/${seasonNumber}/episode/${episodeNumber}?api_key=${apiKey}`);
-                return response.data.still_path;
+                return { ...response.data, serieId }; 
             });
     
             const episodesDetails = await Promise.all(episodesDetailsPromises);
-            console.log(episodesDetails) ;
+            console.log(episodesDetails);
             setData(episodesDetails);
         } catch (err) {
             console.log(err);
         }
     };
+    
+    
+    
 
     
     useEffect(() => {
@@ -67,16 +71,20 @@ function ContinueWatching() {
         <div className="continueWatching">
             <h2>Continue Watching</h2>
             <Slider {...settings}>
-                {data.map((item, index) => {
-                    return (
-                        <React.Fragment key={index}>
-                            <div className="slide" style={{ backgroundImage: `url("https://image.tmdb.org/t/p/original/${item}")` }}>
-                                {/* {item.name} */}
-                            </div>
-                        </React.Fragment>
-                    );
-                })}
-            </Slider>
+    {data.map((item, index) => {
+        return (
+            <React.Fragment key={index}>
+                
+                <a href={`/${item.serieId}`}>
+                    
+                    <Link to={`/${item.serieId}`} className="slide" style={{ backgroundImage: `url("https://image.tmdb.org/t/p/original/${item.still_path}")` }}>
+                        
+                    </Link>
+                </a>
+            </React.Fragment>
+        );
+    })}
+</Slider>
         </div>
     );
     
