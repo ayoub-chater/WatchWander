@@ -1,0 +1,36 @@
+.App {
+    text-align: center;
+  }
+  
+  .show-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 200px;
+
+  }
+  
+  .show-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    max-width: 256px;
+    text-align: left;
+  }
+  
+  .show-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .show-card h3 {
+    margin-top: 10px;
+  }
+  
+  .show-card p {
+    margin-top: 5px;
+    color: #555;
+  }
+  

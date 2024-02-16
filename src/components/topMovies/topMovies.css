@@ -1,0 +1,63 @@
+.discovery .topMovies h3 {
+    margin-bottom : 40px ;
+}
+
+.discovery .topMovies .film {
+    display: flex;
+    grid-gap: 25px;
+    margin-bottom: 30px ;
+    position: relative;
+}
+
+.discovery .topMovies .filmInfo {
+    display: flex;
+    grid-gap: 8px;
+    flex-direction: column;
+}
+
+.discovery .topMovies .film img {
+    width: 120px;
+    border-radius: 20px;
+    height: 160px ;
+}
+
+.discovery .topMovies .film::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px; 
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)); 
+}
+
+.discovery .topMovies .film p {
+    font-size: 15px ;
+    color: #73777c ;
+}
+
+.discovery .topMovies .film p i {
+    margin-right: 10px ;
+    color: inherit ;
+}
+
+.discovery .topMovies .film span {
+    font-size: 18px ;
+}
+
+.discovery .topMovies .film span i {
+    color: #ffcd19 ;
+    margin-right: 10px ;
+}
+
+.discovery .topMovies button {
+    background-color: transparent;
+    border: 1px solid #8731b0;
+    padding: 14px 0px;
+    border-radius: 30px;
+    width: 100%;
+    color: #8731b0;
+    margin: 10px 0 30px 0;
+    font-size: 17px;
+    font-weight: bold;
+}

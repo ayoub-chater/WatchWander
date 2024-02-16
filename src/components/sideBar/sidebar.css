@@ -1,0 +1,73 @@
+.sidebar {
+    width: fit-content;
+    background-color: #13131a;
+    height: calc( 100vh - 70px );
+    position: fixed;
+    top: 70px ;
+    display: flex;
+    justify-content: space-between ;
+    flex-direction: column;
+}
+
+.sidebar .all {
+    padding: 30px 50px 30px 30px;
+}
+
+.sidebar .top {
+    margin-bottom: 20px ;
+}
+
+.sidebar .top h3 , .bottom h3 {
+    font-size: 17px;
+    font-weight: bold;
+    color: #565b63 ;
+}
+
+.sidebar .top ul , .bottom ul {
+    list-style: none;
+    margin: 0 20px;
+    padding: 0;
+    color: #565b63;
+}
+
+.sidebar .top ul li a , .bottom ul li a {
+    color: #565b63 !important;
+    display: block ;
+    padding: 10px ;
+    text-decoration: none ;
+}
+
+.sidebar .top ul li .active , .bottom ul li .active {
+    color: #fff !important;
+}
+
+.sidebar .top ul li .active i , .bottom ul li .active i {
+    color: #a138d2 !important;
+}
+
+.sidebar .top ul li a i , .bottom ul li a i {
+    margin-right: 10px;
+    color: #565b63;
+}
+
+.sidebar .logout {
+    text-align: center;
+}
+
+.sidebar .logout button {
+    background-color: transparent;
+    border: 1px solid #c13a4c;
+    padding: 10px 0px;
+    border-radius: 30px;
+    width: 100%;
+    color: #c13a4c;
+    margin: 10px 0 30px 0;
+    font-size: 17px;
+    font-weight: bold;
+    width: 86% ;
+}
+
+.sidebar .logout i {
+    margin-right: 10px ;
+    color: #c13a4c;
+}

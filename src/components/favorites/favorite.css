@@ -1,0 +1,101 @@
+.favorites h1 {
+    margin-bottom : 40px ;
+}
+
+.favorites a {
+    text-decoration: none ;
+}
+
+.favorites {
+    width: calc( 100% - 321px );
+    margin-left: 276px;
+    margin-top: 70px;
+    height: 5000px;
+    margin: 105px 45px 30px 321px;
+}
+
+.inside-favorites {
+    display: flex ;
+    grid-gap: 50px;
+    justify-content: space-arround;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.filmRec {
+    display: flex;
+    grid-gap: 8px;
+    flex-direction: column;
+    width: 350px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.filmRec img {
+    width: 100%;
+    border-radius: 20px;
+    height: 180px ;
+    margin-bottom: 20px !important;
+}
+
+.filmRec::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px; 
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)); 
+}
+
+.filmRec .filmInfo .inside-filmInfo {
+    display: flex ;
+    justify-content: space-between ;
+}
+
+.filmRec .filmInfo p {
+    font-size: 15px ;
+    color: #73777c ;
+}
+
+.filmRec .filmInfo p i {
+    margin-right: 10px ;
+    color: inherit ;
+}
+
+.filmRec .filmInfo h5 {
+    width: 59%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filmRec .filmInfo span {
+    font-size: 15px ;
+    margin-top: -1px;
+}
+
+.filmRec .filmInfo .inside-filmInfo {
+    align-items: center;
+}
+
+.filmRec .filmInfo .inside-filmInfo span i {
+    color: #ffcd19 ;
+    margin-right: 10px ;
+    font-size: 15px !important;
+}
+
+.favorites button {
+    background-color: transparent;
+    border: 1px solid #8731b0;
+    padding: 5px 14px;
+    border-radius: 12px;
+    color: #8731b0;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.5s ;
+}
+
+.favorites button:hover {
+    background-color: #8731b0;
+    color: #ddd;
+}
